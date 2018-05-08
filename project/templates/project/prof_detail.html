@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Personal Page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<!-- meta-tags -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Personal Resume a Responsive Web Template, Bootstrap Web Templates, Flat Web Templates, Android Compatible Web Template, Smartphone Compatible Web Template, Free Web Designs for Nokia, Samsung, LG, Sony Ericsson, Motorola Web Design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //meta-tags -->
+
+{% load staticfiles %}
+	<link rel="stylesheet" type="text/css" href="{% static 'project/css/style_pp.css' %}" />
+	<link rel="stylesheet" type="text/css" href="{% static 'project/css/swipebox_pp.css' %}" />
+	<link rel="stylesheet" type="text/css" href="{% static 'project/css/bootstrap_pp.css' %}" />
+	<link rel="stylesheet" type="text/css" href="{% static 'project/css/font-awesome_pp.css' %}" />
+
+<!-- Custom-Files -->
+<link rel="stylesheet" href="css/bootstrap.css"> <!-- Bootstrap-Core-CSS -->
+<link rel="stylesheet" href="css/style.css" type="text/css" media="all" /> <!-- Style-CSS -->
+<link href="css/font-awesome.css" rel="stylesheet"> <!-- Font-Awesome-Icons-CSS -->
+<link rel="stylesheet" href="css/swipebox.css"> <!-- For-Gallery-Swipebox-CSS -->
+<!-- //Custom-Files -->
+
+<!-- Web-Fonts -->
+<link href="//fonts.googleapis.com/css?family=Nunito:300,400,700" rel="stylesheet">
+<!-- //Web-Fonts -->
+   <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+
+    /* Add a gray background color and some padding to the footer */
+    footer {
+      background-color: #f2f2f2;
+      padding: 25px;
+    }
+
+
+    .dropdown-menu{background-color:black; color:white; }
+
+    .white-text {
+    color: #FFFFFF; !important
+
+    .first{
+
+        text-align=center;
+    }
+
+  </style>
+
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" >IITG</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li ><a href= "{% url 'index' %}">Home</a></li>
+
+        <li><a href="{% url 'about' %}">About</a></li>
+        <li><a href="{% url 'contact' %}">Contact</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href= "{% url 'login_user' %}" ><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+    <div class="nav-agile">
+		<div class="container">
+			<!-- Navigation -->
+			<nav class="navbar navbar-default">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="true">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+					<!-- Collect the nav links, forms, and other content for toggling -->
+					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+						<ul class="nav navbar-nav navbar-right margin-top cl-effect-2">
+                            <!--<li><a class="scroll" href="#"><span data-hover="Home">Home</span></a></li>-->
+                            <li><a class="scroll" href="#about"><span data-hover="About">About</span></a></li>
+							<li><a class="scroll" href="#experience"><span data-hover="Experience">Experience</span></a></li>
+							<li><a class="scroll" href="#teaching"><span data-hover="Teaching">Teaching</span></a></li>
+                            <li><a class="scroll" href="#student"><span data-hover="Student">Students</span></a></li>
+							<li><a class="scroll" href="#projects"><span data-hover="Projects">Projects</span></a></li>
+							<li><a class="scroll" href="#contact"><span data-hover="Contact">Contact</span></a></li>
+						</ul>
+						<div class="clearfix"></div>
+					</div><!-- /.navbar-collapse -->
+					<div class="clearfix"></div>
+			</nav>
+		</div>
+	</div >
+
+
+    <div class="about" id="about">
+		<div class="container">
+			<div class="w3l-grids-about">
+				<div class="col-md-5 w3ls-ab-right">
+					<div class="agile-about-right-img">
+						<img src="{{ prof.Image.url }}" alt="">
+					</div>
+				</div>
+				<div class="col-md-7 w3ls-agile-left">
+					<div class="w3ls-agile-left-info">
+						<div class="wel-left animated wow fadeInLeft" data-wow-delay=".5s">
+							<div class="icon-w3l">
+								<i class="hovicon effect-2 sub-a"><span  class="glyphicon glyphicon-star"></span></i>
+							</div>
+							<div class="text-w3l">
+								<h2>{{ prof.Name }}</h2>
+								<h3>{{ prof.Designation }}</h3>
+
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+					</div>
+
+                  <div class="w3ls-agile-left-info">
+						<div class="wel-left animated wow fadeInLeft" data-wow-delay=".5s">
+							<div class="icon-w3l">
+								<i class="hovicon effect-2 sub-a"><span  class="glyphicon glyphicon-home"></span></i>
+							</div>
+							<div class="text-w3l">
+								<h4>{{ prof.Room_No }}</h4>
+								<h4>{{ prof.address1 }},{{ prof.address2 }}</h4>
+								<h4>{{ prof.Department }}</h4>
+                              <h4>IITG</h4>
+
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+					</div>
+
+                  <div class="w3ls-agile-left-info">
+						<div class="wel-left animated wow fadeInLeft" data-wow-delay=".5s">
+							<div class="icon-w3l">
+								<i class="hovicon effect-2 sub-a"><span class="glyphicon glyphicon-star"></span></i>
+							</div>
+							<div class="text-w3l">
+								<h2>Research Interest</h2>
+								<h3>{{ prof.Research_Interests }}</h3>
+
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+					</div>
+
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>
+
+    <hr>
+
+
+
+    <div class="aitsresumewthree" id="experience">
+		<div class="container">
+			<div class="aitsresumewthree-tag">
+				<h3 class="title">EXPERIENCE</h3>
+			</div>
+			<div class="load_more">
+				<ul id="myList">
+					<li class="aitsaitsresumewthreeli-1">
+						<div class="l_g">
+							<div class="l_g_r g_r">
+								<div class="work">
+
+
+
+                                     {% for experience in prof.experience_set.all %}
+
+                                        <div class="work-info">
+										<div class="col-md-6 work-grid work-left">
+											<h4>{{ experience.Start_date }} -- {{ experience.End_date }}</h4>
+										</div>
+										<div class="col-md-6 work-grid work-right">
+											<h5 class="univ">{{ experience.Name }}</h5>
+											<p>{{ experience.Detail }} </p>
+										</div>
+										<div class="clearfix"> </div>
+									</div>
+
+
+                                    {% endfor %}
+
+
+
+
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="l_g">
+							<div class="l_g_r g_r">
+								<div class="work">
+                                        <div class="aitsresumewthree-tag">
+                                            <h3 class="title">PUBLICATIONS</h3>
+                                        </div>
+
+                                     {% for publication in prof.publication_set.all %}
+
+
+
+										<div class="work-info">
+										<div class="col-md-6 work-grid work-right work-right2">
+											<h4>{{ publication.Date }}</h4>
+										</div>
+										<div class="col-md-6 work-grid work-left work-left2">
+											<h5>{{ publication.Name }}</h5>
+											<p>{{ publication.Detail }} </p>
+										</div>
+										<div class="clearfix"> </div>
+									    </div>
+
+                                    {% endfor %}
+
+
+								</div>
+							</div>
+						</div>
+					</li>
+                    <li class="aitsaitsresumewthreeli-1">
+						<div class="l_g">
+							<div class="l_g_r g_r">
+								<div class="work">
+
+                                    <div class="aitsresumewthree-tag">
+                                            <h3 class="title">RECOGNITIONS</h3>
+                                    </div>
+
+
+
+                                     {% for recognition in prof.recognition_set.all %}
+
+                                        <div class="work-info">
+										<div class="col-md-6 work-grid work-left">
+											<h4>{{ recognition.Date }}</h4>
+										</div>
+										<div class="col-md-6 work-grid work-right">
+											<h5 class="univ">{{ recognition.Name }}</h5>
+											<p>{{ recognition.Detail }} </p>
+										</div>
+										<div class="clearfix"> </div>
+									</div>
+
+
+                                    {% endfor %}
+
+								</div>
+							</div>
+						</div>
+					</li>
+
+
+
+
+
+				</ul>
+				<div class="wow fadeInUp" id="loadMore">Show More <i class="fa fa-chevron-down" aria-hidden="true"></i></div>
+				<div class="wow fadeInDown" id="showLess">Show Less <i class="fa fa-chevron-up" aria-hidden="true"></i></div>
+			</div>
+		</div>
+	</div>
+
+    <div class="wthreeskills" id="teaching">
+		<div class="container-fluid">
+                			<h3>TEACHING</h3>
+                <ol style="font-size:1em">
+
+                {% for teaching in prof.teaching_set.all %}
+<li>
+
+                    <h4  > <strong> {{ teaching.Start_date }} -- {{ teaching.End_date }} </strong> </h4>
+                      <h4> <strong>{{ teaching.Name }}-{{ teaching.Detail }} </strong> </h4>
+    <br>
+
+</li>
+            {% endfor %}
+</ol>
+
+
+
+
+
+        </div>
+
+    </div>
+<br>
+
+<div class="wthreeskills" id="student">
+		<div class="container-fluid">
+			<h3>STUDENTS</h3>
+
+                <ol style="font-size:1em">
+
+                {% for student in prof.student_set.all %}
+<li>
+
+                    <h4  > <strong> {{ student.Start_date }} -- {{ student.End_date }} </strong> </h4>
+                      <h4> <strong>{{ student.Name }}-{{ student.Detail }} </strong> </h4>
+    <br>
+
+</li>
+            {% endfor %}
+</ol>
+
+
+
+
+
+        </div>
+
+    </div>
+<br>
+
+<div class="wthreeskills" id="projects">
+		<div class="container-fluid">
+			<h3>PROJECTS</h3>
+
+  <ol style="font-size:1em">
+
+                {% for projects in prof.projects_set.all %}
+<li>
+
+                    <h4  > <strong> {{ projects.Start_date }} -- {{ projects.End_date }} </strong> </h4>
+                      <h4> <strong>{{ projects.Name }}-{{ projects.Detail }} </strong> </h4>
+    <h4>
+        <strong>
+            Funding Agency: {{ projects.Funding_agency }}
+        </strong>
+    </h4>
+    <br>
+
+</li>
+            {% endfor %}
+</ol>
+
+
+        </div>
+
+    </div>
+
+
+
+
+<div class="contact" id="contact" text-color="black" >
+		<h3 class="agile-contact"> Contact Me</h3>
+		<div class="contact-agile">
+
+			<div class="contact-left-agile">
+				<h4>About Me</h4>
+				<div class="add-w3ls-main">
+						<span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
+					<div class="add-w3ls2">
+                        						<h5 style = "color:rgb(0,0,0);" >Location</h5>
+
+                        <h5  style = "color:rgb(0,0,0);">{{prof.Room_No}}-{{prof.address1}}</h5>
+						<p  style = "color:rgb(0,0,0);">{{prof.address2}}</p>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+				<div class="add-w3ls-main">
+						<span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+					<div class="add-w3ls2">
+						<h5  style = "color:rgb(0,0,0);" >Email</h5>
+						<p  style = "color:rgb(0,0,0);" >{{prof.email}}</p>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+				<div class="add-w3ls-main">
+						<span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>
+					<div class="add-w3ls2">
+						<h5 style = "color:rgb(0,0,0);" >Call Me</h5>
+						<p style = "color:rgb(0,0,0);" >(o) : {{prof.phone_office}}</p>
+						<p style = "color:rgb(0,0,0);" >(r) : {{prof.phone_residency}}</p>
+
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+			</div>
+			<div class="contact-right-w3l">
+				<div class="contact-form">
+					<form>
+						<input placeholder="NAME" name="Name" type="text" required="" />
+						<input placeholder="LASTNAME" name="Name" type="text" required="" />
+						<input placeholder="E-MAIL" name="Email" type="email" required="" />
+						<textarea placeholder="TYPE YOUR MESSAGE......" required=""></textarea>
+						<input type="submit" value="Submit">
+					</form>
+				</div>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+	<div class="copy-section">
+		<div class="container">
+			<div class="footer-top">
+				<p>© 2017 @ IITG</p>
+			</div>
+		</div>
+	</div>
+
+
+<!-- Custom-JavaScript-Files -->
+
+		<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script> <!-- Default-JavaScript-File -->
+		<script type="text/javascript" src="js/bootstrap.js"></script> <!-- Necessary-JavaScript-File-For-Bootstrap -->
+
+		<!-- for-projects -->
+
+			<!-- //swipe box js -->
+
+
+		<!-- //for-projects -->
+
+		<!-- Horizontal-Tabs-JavaScript -->
+			<script src="js/easyResponsiveTabs.js" type="text/javascript"></script>
+			<script type="text/javascript">
+				$(document).ready(function () {
+					$('#horizontalTab').easyResponsiveTabs({
+						type: 'default',
+						width: 'auto',
+						fit: true,
+					});
+				});
+			</script>
+		<!-- Horizontal-Tabs-JavaScript -->
+
+		<!-- Stats-Number-Scroller-Animation-JavaScript -->
+		<!-- //Stats-Number-Scroller-Animation-JavaScript -->
+
+		<!-- Progressive-Bars-JavaScript -->
+			<script src="js/bars.js"></script>
+		<!-- //Progressive-Bars-JavaScript -->
+
+		<!-- for-experience -->
+			<!-- Show-More-JavaScript -->
+			<script>
+				$(document).ready(function () {
+					size_li = $("#myList li").size();
+					x=1;
+					$('#myList li:lt('+x+')').show();
+					$('#loadMore').click(function () {
+						x= (x+1 <= size_li) ? x+1 : size_li;
+						$('#myList li:lt('+x+')').show();
+					});
+					$('#showLess').click(function () {
+						x=(x-1<0) ? 1 : x-1;
+						$('#myList li').not(':lt('+x+')').hide();
+					});
+				});
+			</script>
+
+<!-- Horizontal-Tabs-JavaScript -->
+			<script src="js/easyResponsiveTabs.js" type="text/javascript"></script>
+			<script type="text/javascript">
+				$(document).ready(function () {
+					$('#horizontalTab').easyResponsiveTabs({
+						type: 'default',
+						width: 'auto',
+						fit: true,
+					});
+				});
+			</script>
+
+
+
+    <script src="{% static 'project/js/bars.js' %}"></script>
+    <script src="{% static 'project/js/bootstrap.js' %}"></script>
+    <script src="{% static 'project/js/counterup.min.js' %}"></script>
+    <script src="{% static 'project/js/easing.js' %}"></script>
+    <script src="{% static 'project/js/easyResponsiveTabs.js' %}"></script>
+    <script src="{% static 'project/js/jquery.adipoli.min.js' %}"></script>
+    <script src="{% static 'project/js/jquery.swipebox.min.js' %}"></script>
+    <script src="{% static 'project/js/jquery-2.1.4.min.js' %}"></script>
+    <script src="{% static 'project/js/move-top.js' %}"></script>
+    <script src="{% static 'project/js/waypoints.min.js' %}"></script>
+
+</body>
+
+</html>

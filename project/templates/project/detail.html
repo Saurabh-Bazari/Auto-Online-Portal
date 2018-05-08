@@ -1,0 +1,156 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>{{ dept }}</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+    /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
+    .row.content {height: 100vh;
+        }
+
+    /* Set gray background color and 100% height */
+    .sidenav {
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
+
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height: auto;}
+    }
+
+    .dropdown-menu{background-color:black; color:white; }
+
+    .white-text {
+    color: #FFFFFF; !important
+}
+
+  </style>
+</head>
+<body>
+
+
+<div class="jumbotron">
+  <div class="container text-center" >
+   <h1 >
+      <img class="img-responsive" src="/static/project/images/11.png" style="width:20%;float: left;" >
+       Indian Institute of Technology Guwahati
+   </h1>
+    <h2 style="font-size:30px;" align="center" > {{ dept }} </h2>
+
+  </div>
+</div>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" >IITG</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li ><a href="{% url 'index' %}">Home</a></li>
+
+
+          <li class="active" class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Department <span class="caret"></span></a>
+            <ul class="dropdown-menu" >
+               {% for dept in all_depts %}
+                    <a href= "{% url 'detail' dept.id %}"  class=" white-text" > {{dept.Dept_name}}</a>
+
+                    <li class="divider"></li>
+
+                </li>
+                {% endfor %}
+            </ul>
+          </li>
+
+        <li><a href="{% url 'about' %}">About</a></li>
+        <li><a href="{% url 'contact' %}">Contact</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href= "{% url 'login_user' %}" ><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container-fluid">
+  <div class="row content">
+    <div class="col-sm-3 sidenav">
+      <h2>Department Professor</h2>
+      <ul class="nav nav-pills nav-stacked">
+          {% for prof in dept.prof_set.all %}
+                    <li>
+                      <img class="img-responsive" src="{{ prof.Image.url }}" width="50%" >
+                      <a href= "{% url 'prof_detail' prof.id %}">{{ prof.Name }} - {{ prof.Designation }}</a>
+                    </li>
+          {% endfor %}
+      </ul><br>
+    </div>
+
+
+    <div class="col-sm-9">
+
+             <h1> Department of {{ dept.Dept_name }} </h1>
+            <h1> {{ dept.Dept_address1 }} </h1>
+             <h1> {{ dept.Dept_address2 }} </h1>
+             <h1> Phone: {{ dept.Dept_phone }} </h1>
+             <h1> Fax: {{ dept.Dept_Fax }} </h1>
+            <h1> email: {{ dept.Dept_email }} </h1>
+
+      <hr>
+
+      <h3> {{ dept.Dept_detail1 }} </h3>
+      <hr>
+      <p>
+        {{ dept.Dept_detail2 }}
+      </p>
+
+
+        {% for facility in dept.facility_set.all %}
+        <hr>
+      <h2>
+        {{ facility.Facility_name }}
+      </h2>
+      <p>
+        {{ facility.Facility_description }}
+      </p>
+
+          {% endfor %}
+
+
+
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p align="center">
+    {{ dept.Dept_name }}@IITG
+  </p>
+</footer>
+
+
+</body>
+</html>

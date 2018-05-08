@@ -1,0 +1,162 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!-- saved from url=(0043)https://webmail.iitg.ernet.in/src/login.php -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="robots" content="noindex,nofollow">
+<meta http-equiv="x-dns-prefetch-control" content="off">
+
+<title>Login</title>
+
+    <script language="JavaScript" type="text/javascript"></script>
+
+<style type="text/css">
+/* avoid stupid IE6 bug with frames and scrollbars */
+body {
+    width: expression(document.documentElement.clientWidth - 30);
+}
+</style>
+
+     <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+
+    /* Add a gray background color and some padding to the footer */
+    footer {
+      background-color: #f2f2f2;
+      padding: 25px;
+    }
+
+    .dropdown-menu{background-color:black; color:white; }
+
+    .white-text {
+    color: #FFFFFF; !important
+
+    .centerTable { text-align: center; }
+
+  </style>
+
+</head>
+
+<body>
+
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" >IITG</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li ><a href="{% url 'index' %}">Home</a></li>
+
+
+
+        <li><a href="{% url 'about' %}">About</a></li>
+        <li><a href="{% url 'contact' %}">Contact</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li  ><a href= "{% url 'register' %}" > Register</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="jumbotron">
+  <div class="container text-center" >
+   <h1>
+      <img class="img-responsive" src="/static/project/images/11.png" style="width:20%;float: left;" >
+       Indian Institute of Technology Guwahati
+   </h1>
+    <p>Login Portal</p>
+  </div>
+</div>
+
+
+
+<center>
+                <table width="1000" style="margin-top:10px; margin-left:500px;" >
+                    <tbody>
+
+                        <td bgcolor="#ffffff" align="center">
+
+
+                            <div class="container-fluid">
+
+                                    <div class="col-sm-8 col-md-6">
+                                        <div class="panel panel-default">
+                                            <div class="panel-body">
+                                                <h3>Log In</h3>
+                                                {% if error_message %}
+                                                    <p><strong>{{ error_message }}</strong></p>
+                                                {% endif %}
+                                                <form class="form-horizontal" role="form" action="" method="post" enctype="multipart/form-data">
+                                                    {% csrf_token %}
+                                                    <div class="form-group">
+                                                        <label class="control-label col-sm-2" for="id_username">
+                                                            Username:
+                                                        </label>
+                                                        <div class="col-sm-10">
+                                                            <input id="id_username" maxlength="30" name="username" type="text">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="control-label col-sm-2" for="id_password">
+                                                            Password:
+                                                        </label>
+                                                        <div class="col-sm-10">
+                                                            <input id="id_password" maxlength="100" name="password" type="password">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <div class="col-sm-offset-2 col-sm-10">
+                                                            <button type="submit" class="btn btn-success">Submit</button>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <div class="panel-footer">
+                                                Don't have an account? <a href="{% url 'register' %}">Click here</a> to register.
+                                            </div>
+                                        </div>
+                                    </div>
+
+                            </div>
+
+
+
+
+                        </td>
+                    </tbody>
+
+                </table>
+</center>
+
+
+</body>
+
+
+</html>
+
+
+
+
+
+
+
+

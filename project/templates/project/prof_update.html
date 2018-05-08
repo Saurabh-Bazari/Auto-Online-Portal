@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Update</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+
+    /* Add a gray background color and some padding to the footer */
+    footer {
+      background-color: #f2f2f2;
+      padding: 25px;
+    }
+
+    .dropdown-menu{background-color:black; color:white; }
+
+
+  </style>
+</head>
+<body >
+
+<div class="jumbotron">
+  <div class="container text-center" >
+    <h1>Indian Institute of Technology Guwahati</h1>
+    <p>Auto intelligence project</p>
+  </div>
+</div>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand">IITG</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+
+        <li class="active" ><a href="#">Update Info</a></li>
+        <li><a href="{% url 'publication-add' %}">Publication</a></li>
+        <li><a href="{% url 'recognition-add' %}">Recognition</a></li>
+        <li><a href="{% url 'projects-add' %}">Projects</a></li>
+        <li><a href="{% url 'teaching-add' %}">Teaching</a></li>
+        <li><a href="{% url 'student-add' %}">Student</a></li>
+        <li><a href=" {% url 'experience-add' %} ">Experience</a></li>
+
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+      </ul>
+
+        <ul class="nav navbar-nav navbar-right">
+        <li><a href= "{% url 'logout_user' %}" ><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+
+
+                    {% if error_message %}
+                        <p><strong>{{ error_message }}</strong></p>
+                    {% endif %}
+                    <form class="form-horizontal" role="form" action="" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+
+                        <div class="form-group">
+
+                        </div>
+                    </form>
+
+
+<div class="container-fluid">
+
+    <div class="row">
+
+        <div class="col-sm-12 col-md-7">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <h3>Fill Details</h3>
+
+                    <form class="form-horizontal" role="form" action="http://127.0.0.1:8000/project/profadd/" method="post" enctype="multipart/form-data">
+                        <input type="hidden" name="csrfmiddlewaretoken" value="alfAJ6nvvvfthJRKa3Hpt2WCM4A1ZCErLnv3TIHrWv0qos4AH0SDr68StS9ySA1H">
+
+
+
+
+
+
+
+
+
+
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <span class="text-danger small"></span>
+        </div>
+        <label class="control-label col-sm-2"><label for="id_Department">Department:</label></label>
+        <div class="col-sm-10"><select name="Department" required="" id="id_Department">
+  <option value="" selected="">---------</option>
+
+  <option value="2">Design</option>
+
+  <option value="3">Chemistry</option>
+
+  <option value="4">Civil</option>
+
+  <option value="5">Electronics and Electrical Engineering</option>
+
+  <option value="6">Physics</option>
+
+  <option value="7">Mechanical Engineering</option>
+
+  <option value="8">Mathematics</option>
+
+  <option value="9">Humanities and Social Sciences</option>
+
+  <option value="10">Biosciences and Bioengineering</option>
+
+  <option value="11">Computer Science and Engineering</option>
+
+</select></div>
+    </div>
+
+
+
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <span class="text-danger small"></span>
+        </div>
+        <label class="control-label col-sm-2"><label for="id_Name">Name:</label></label>
+        <div class="col-sm-10"><input type="text" name="Name" maxlength="100" required="" id="id_Name"></div>
+    </div>
+
+
+
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <span class="text-danger small"></span>
+        </div>
+        <label class="control-label col-sm-2"><label for="id_Designation">Designation:</label></label>
+        <div class="col-sm-10"><select name="Designation" required="" id="id_Designation">
+  <option value="" selected="">---------</option>
+
+  <option value="1">Assistant Professor</option>
+
+  <option value="2">Professor</option>
+
+  <option value="3">Associate Professor</option>
+
+  <option value="4">Head of Department and Professor</option>
+
+  <option value="5">Honorary Professor</option>
+
+  <option value="6">Visiting Professor</option>
+
+</select></div>
+    </div>
+
+
+
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <span class="text-danger small"></span>
+        </div>
+        <label class="control-label col-sm-2"><label for="id_Image">Image:</label></label>
+        <div class="col-sm-10"><input type="file" name="Image" required="" id="id_Image"></div>
+    </div>
+
+
+
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <span class="text-danger small"></span>
+        </div>
+        <label class="control-label col-sm-2"><label for="id_address1">Address1:</label></label>
+        <div class="col-sm-10"><input type="text" name="address1" maxlength="1000" id="id_address1"></div>
+    </div>
+
+
+
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <span class="text-danger small"></span>
+        </div>
+        <label class="control-label col-sm-2"><label for="id_address2">Address2:</label></label>
+        <div class="col-sm-10"><input type="text" name="address2" maxlength="1000" id="id_address2"></div>
+    </div>
+
+
+
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <span class="text-danger small"></span>
+        </div>
+        <label class="control-label col-sm-2"><label for="id_phone_office">Phone office:</label></label>
+        <div class="col-sm-10"><input type="number" name="phone_office" required="" id="id_phone_office"></div>
+    </div>
+
+
+
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <span class="text-danger small"></span>
+        </div>
+        <label class="control-label col-sm-2"><label for="id_phone_residency">Phone residency:</label></label>
+        <div class="col-sm-10"><input type="number" name="phone_residency" required="" id="id_phone_residency"></div>
+    </div>
+
+
+
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <span class="text-danger small"></span>
+        </div>
+        <label class="control-label col-sm-2"><label for="id_email">Email:</label></label>
+        <div class="col-sm-10"><input type="email" name="email" maxlength="1000" required="" id="id_email"></div>
+    </div>
+
+
+
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <span class="text-danger small"></span>
+        </div>
+        <label class="control-label col-sm-2"><label for="id_Room_No">Room No:</label></label>
+        <div class="col-sm-10"><input type="text" name="Room_No" maxlength="1000" required="" id="id_Room_No"></div>
+    </div>
+
+
+
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <span class="text-danger small"></span>
+        </div>
+        <label class="control-label col-sm-2"><label for="id_Research_Interests">Research Interests:</label></label>
+        <div class="col-sm-10"><input type="text" name="Research_Interests" maxlength="1000" required="" id="id_Research_Interests"></div>
+    </div>
+
+
+
+
+
+
+
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button type="submit" class="btn btn-success">Submit</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<footer class="container-fluid text-center">
+  <p></p>
+</footer>
+
+</body>
+</html>
+
+
+
+
+
+
